@@ -66,7 +66,6 @@ GitHubWebhooks.prototype._processWebhook = function(data) {
 
     if (symmetricalDifference === 0) {
       // we found an expected webhook with the same properties, emit an event
-      console.log('emitting event: ', webhookName);
       this._events.emit(webhookName, data);
     }
 
