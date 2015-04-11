@@ -1,0 +1,147 @@
+{
+  "commit-comment": [
+    "comment",
+    "repository",
+    "sender"
+  ],
+  "create": [
+    "ref",
+    "ref_type",
+    "master_branch",
+    "description",
+    "pusher_type",
+    "repository",
+    "sender"
+  ],
+  "delete": [
+    "ref",
+    "ref_type",
+    "pusher_type",
+    "repository",
+    "sender"
+  ],
+  "deployment": [
+    "deployment",
+    "id",
+    "sha",
+    "ref",
+    "task",
+    "name",
+    "environment",
+    "payload",
+    "description",
+    "repository",
+    "sender"
+  ],
+  "deployment-status": [
+    "deployment",
+    "deployment_status",
+    "id",
+    "state",
+    "target_url",
+    "description",
+    "repository",
+    "sender"
+  ],
+  "fork": [
+    "forkee",
+    "repository",
+    "sender"
+  ],
+  "gollum": [
+    "pages",
+    "repository",
+    "sender"
+  ],
+  "issue-comment": [ 
+    "action",
+    "issue",
+    "comment",
+    "repository",
+    "sender"
+  ],
+  "issues": [
+    "action",
+    "issue",
+    "label",
+    "repository",
+    "sender"
+  ],
+  "member": [
+    "action",
+    "member",
+    "repository",
+    "sender"
+  ],
+  "page-build": [
+    "id",
+    "build",
+    "repository",
+    "sender"
+  ],
+  "public": [
+    "repository",
+    "sender"
+  ],
+  "pull-request": [
+    "action",
+    "number",
+    "pull_request",
+    "repository",
+    "sender"
+  ],
+  "pull-request-review-comment": [
+    "action",
+    "comment",
+    "pull_request",
+    "repository",
+    "sender"
+  ],
+  "push": [
+    "ref",
+    "before",
+    "after",
+    "created",
+    "deleted",
+    "forced",
+    "base_ref",
+    "compare",
+    "commits",
+    "head_commit",
+    "repository",
+    "pusher",
+    "sender"
+  ],
+  "release": [
+    "action",
+    "release",
+    "repository",
+    "sender"
+  ],
+  "status": [
+    "id",
+    "sha",
+    "name",
+    "target_url",
+    "context",
+    "description",
+    "state",
+    "commit",
+    "branches",
+    "created_at",
+    "updated_at",
+    "repository",
+    "sender"
+  ],
+  "team-add": [
+    "team",
+    "repository",
+    "organization",
+    "sender"
+  ],
+  "watch": [
+    "action",
+    "repository",
+    "sender"
+  ]
+}

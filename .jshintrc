@@ -1,0 +1,23 @@
+{
+  "boss": true,
+  "browser": false,
+  "curly": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "expr": true,
+  "immed": true,
+  "noarg": true,
+  "quotmark": "single",
+  "trailing": true,
+  "undef": true,
+  "esnext": true,
+  "node": true,
+  "predef": [
+    "before",
+    "beforeEach",
+    "after",
+    "afterEach",
+    "describe",
+    "it"
+  ]
+}
