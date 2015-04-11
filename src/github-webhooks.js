@@ -18,7 +18,7 @@ function GitHubWebhooks() {
   this._events = new events.EventEmitter();
 
   // add our catch all route
-  this._server.post('*', this._retrievePostedWebhookData);
+  this._server.post('*', this._retrievePostedWebhookData.bind(this));
 }
 
 GitHubWebhooks.prototype.listen = function(port) {
