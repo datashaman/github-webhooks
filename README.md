@@ -1,18 +1,18 @@
-#github-webhooks
+# github-webhooks
 
->A node module that enables your apps to listen for GitHub webhooks.
+> A node module that enables your apps to listen for GitHub webhooks.
 
-#getting-started
+# getting-started
 
 You'll want to be familiar with how GitHub webhooks work; you can view an in-depth explanation by visiting the [GitHub webhook documentation](https://developer.github.com/webhooks/).
  
-#installation
+# installation
 
 ```
 $ npm install github-webooks
 ```
 
-#example
+# example
 
 ```
 const webhooks = require('github-webhooks');
@@ -28,11 +28,11 @@ webhooks.on('pull-request', function(data) {
 webhooks.listen(9001);
 ```
 
-#supported webhooks
+# supported webhooks
 
 `github-webhooks` supports **all** GitHub webhooks.
 
-#supported events
+# supported events
 
 To listen to an event, simply call `.on('event-name', myCustomFunction)` where:
 
@@ -61,7 +61,7 @@ Here are the events that `github-webhooks` currently supports:
 * `team-add` - emitted when a GitHub team is added or modified
 * `watch` - emitted when a user watches a repository
 
-#license
+# license
 
 The MIT License (MIT)
 
