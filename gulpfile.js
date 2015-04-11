@@ -32,10 +32,10 @@ gulp.task('lint', ['jshint', 'jscs']);
 // TESTS
 gulp.task('run-tests', ['lint'], function() {
   var options = {
-    reporter: 'dot',
+    reporter: 'spec',
     bail: true
   };
-  return gulp.src('tests/**/*.js', {read: false})
+  return gulp.src('tests', {read: false})
     .pipe(mocha(options));
 });
 
