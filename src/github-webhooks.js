@@ -86,7 +86,7 @@ var GitHubWebhooks = {
 
 // setup the catch-all route for the express server
 GitHubWebhooks._server.post('*', GitHubWebhooks._retrievePostedWebhookData
-  .bind(fn));
+  .bind(GitHubWebhooks));
 
 // expose the function object
 exports = module.exports = GitHubWebhooks;
