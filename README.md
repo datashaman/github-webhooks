@@ -50,7 +50,7 @@ Here are the events that `github-webhooks` currently supports:
 * `deployment-status` - emitted when the deployment status is changed via the API
 * `fork` - emitted when the repository is forked
 * `gollum` - emitted when the wiki page is updated via Gollum
-* `issue-comment` - emitted when an issue is commented on`
+* `issue-comment` - emitted when an issue is commented on
 * `issues` - emitted when an issue is opened, closed, assigned or labeled
 * `member` - emitted when a collaborator is added to a non-organization repository
 * `page-build` - emitted when a GitHub pages site is built
