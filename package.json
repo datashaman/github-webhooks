@@ -1,6 +1,6 @@
 {
   "name": "github-webhooks",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A node module that enables your apps to listen for GitHub webhooks.",
   "main": "index.js",
   "repository": {
