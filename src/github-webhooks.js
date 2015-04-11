@@ -45,7 +45,7 @@ GitHubWebhooks.prototype._retrievePostedWebhookData = function(req, res) {
 
     // let the HTTP request finish (GitHub will report the status of POST's to
     // the specified endpoint in the webhook history)
-    req.status(200).end();
+    res.status(200).end();
   }.bind(this));
 };
 
