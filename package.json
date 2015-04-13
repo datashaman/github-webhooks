@@ -12,6 +12,9 @@
   "bugs": {
     "url": "https://github.com/carldanley/github-webhooks/issues"
   },
+  "scripts": {
+    "test": "gulp run-tests"
+  },
   "homepage": "https://github.com/carldanley/github-webhooks",
   "devDependencies": {
     "chai": "^2.2.0",
