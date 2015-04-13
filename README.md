@@ -2,6 +2,8 @@
 
 > A node module that enables your apps to listen for GitHub webhooks.
 
+![Travis-CI](https://travis-ci.org/carldanley/github-webhooks.svg)
+
 # getting-started
 
 You'll want to be familiar with how GitHub webhooks work; you can view an in-depth explanation by visiting the [GitHub webhook documentation](https://developer.github.com/webhooks/).
