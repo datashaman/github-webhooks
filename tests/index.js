@@ -11,7 +11,9 @@ const preTests = [
 // required actually does matter. Why? Because certain files may have certain
 // dependencies.
 const mainTests = [
-  'structure'
+  'structure',
+  'server',
+  'events'
 ];
 
 // run the pretests first

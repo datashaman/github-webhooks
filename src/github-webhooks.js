@@ -18,9 +18,18 @@ var GitHubWebhooks = {
   // internal properties
   _server: express(),
   _events: new events.EventEmitter(),
+  _serverInstance: null,
 
   listen: function(port) {
-    this._server.listen(port);
+    this.close();
+    this._serverInstance = this._server.listen(port);
+  },
+
+  close: function() {
+    if (this._serverInstance && _.isFunction(this._serverInstance.close)) {
+      this._serverInstance.close();
+      delete this._serverInstance;
+    }
   },
 
   _retrievePostedWebhookData: function(req, res) {
