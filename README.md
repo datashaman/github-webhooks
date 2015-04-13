@@ -33,15 +33,15 @@ webhooks.listen(9001);
 
 `github-webhooks` supports **all** GitHub webhooks.
 
-# supported events
+# events
 
+## how-to
 To listen to an event, simply call `.on('event-name', myCustomFunction)` where:
 
 1. `event-name` is a valid event name from the list below
 1. `myCustomFunction` is the function that you want to execute when the event is fired.
 
-
-Here are the events that `github-webhooks` currently supports:
+## supported events
 
 * `commit-comment` - emitted when a commit or diff is commented on
 * `create` - emitted when a branch or tag is created
