@@ -20,6 +20,8 @@
     "chai": "^2.2.0",
     "gulp": "^3.8.11",
     "gulp-cached": "^1.0.4",
+    "gulp-coveralls": "^0.1.3",
+    "gulp-istanbul": "^0.8.1",
     "gulp-jscs": "^1.5.1",
     "gulp-jshint": "^1.10.0",
     "gulp-mocha": "^2.0.1",

@@ -1,8 +1,8 @@
-# github-webhooks
+# github-webhooks ![Status on Travis-CI](https://travis-ci.org/carldanley/github-webhooks.svg) [![Coverage Status](https://coveralls.io/repos/carldanley/github-webhooks/badge.svg?branch=master)](https://coveralls.io/r/carldanley/github-webhooks?branch=master)
+
+![NPM Stats](https://nodei.co/npm/github-webhooks.png?downloads=true)
 
 > A node module that enables your apps to listen for GitHub webhooks.
-
-![Travis-CI](https://travis-ci.org/carldanley/github-webhooks.svg)
 
 # getting-started
 
