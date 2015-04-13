@@ -20,7 +20,9 @@
     "gulp-jscs": "^1.5.1",
     "gulp-jshint": "^1.10.0",
     "gulp-mocha": "^2.0.1",
-    "jshint-stylish": "^1.0.1"
+    "jshint-stylish": "^1.0.1",
+    "sinon": "^1.14.1",
+    "supertest": "^0.15.0"
   },
   "dependencies": {
     "express": "^4.12.3",
