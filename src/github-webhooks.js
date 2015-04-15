@@ -73,8 +73,8 @@ var GitHubWebhooks = {
         receivedProperties);
 
       // also, compare the symmetrical difference with the optional properties
-      optionalDifference = _.difference(expectedProperties.optional,
-        symmetricalDifference);
+      optionalDifference = _.difference(symmetricalDifference,
+        expectedProperties.optional);
 
       if (symmetricalDifference.length === 0) {
         // we found an expected webhook with the same properties, emit an event
