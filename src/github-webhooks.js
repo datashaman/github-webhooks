@@ -58,6 +58,7 @@ var GitHubWebhooks = {
 
   _processWebhook: function(data) {
     var expectedProperties;
+    var optionalDifference;
     var symmetricalDifference;
     var receivedProperties = _.keys(data);
 
@@ -68,11 +69,20 @@ var GitHubWebhooks = {
 
       // compare the expected properties with the properties of the data we
       // received, looking for a symmetrical difference of 0
-      symmetricalDifference = _.xor(expectedProperties, receivedProperties)
-        .length;
+      symmetricalDifference = _.xor(expectedProperties.required,
+        receivedProperties);
 
-      if (symmetricalDifference === 0) {
+      // also, compare the symmetrical difference with the optional properties
+      optionalDifference = _.difference(expectedProperties.optional,
+        symmetricalDifference);
+
+      if (symmetricalDifference.length === 0) {
         // we found an expected webhook with the same properties, emit an event
+        this._events.emit(webhookName, data);
+      } else if (expectedProperties.optional.length > 0 &&
+        optionalDifference.length === 0) {
+        // the symmetrical differences were all listed within the optional
+        // properties
         this._events.emit(webhookName, data);
       }
 

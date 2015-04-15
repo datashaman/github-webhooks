@@ -30,7 +30,7 @@ it('should not have any webhooks with the same properties', function() {
     // than 1
     _.each(scannedWebhooks, function(scannedWebhookName) {
       scannedWebhookProperties = githubWebhookMappings[scannedWebhookName];
-      symmetricalDifference = _.xor(webhookProperties,
+      symmetricalDifference = _.xor(webhookProperties.required,
         scannedWebhookProperties);
 
       if (symmetricalDifference.length === 0) {
