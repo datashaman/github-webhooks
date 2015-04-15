@@ -127,7 +127,9 @@
       "repository",
       "sender"
     ],
-    "optional": []
+    "optional": [
+      "organization"
+    ]
   },
   "pull-request-review-comment": {
     "required": [
