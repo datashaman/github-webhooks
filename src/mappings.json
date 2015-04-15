@@ -82,7 +82,9 @@
       "repository",
       "sender"
     ],
-    "optional": []
+    "optional": [
+      "organization"
+    ]
   },
   "issues": {
     "required": [
