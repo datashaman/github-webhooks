@@ -5,7 +5,9 @@
       "repository",
       "sender"
     ],
-    "optional": []
+    "optional": [
+      "organization"
+    ]
   },
   "create": {
     "required": [
