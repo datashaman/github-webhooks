@@ -1,6 +1,7 @@
 {
   "commit-comment": {
     "required": [
+      "action",
       "comment",
       "repository",
       "sender"
