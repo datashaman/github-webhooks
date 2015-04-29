@@ -63,8 +63,9 @@ var GitHubWebhooks = {
   },
 
   _validate: function(req) {
-      console.log(req.headers);
       var signature = 'sha1=' + Crypto.HMAC(Crypto.SHA1, req.body, process.env.SECRET, { asString: true });
+      console.log(signature, req.headers['x-hub-signature']);
+      return signature === req.headers['x-hub-signature'];
   },
 
   _processWebhook: function(data) {
