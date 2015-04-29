@@ -2,7 +2,7 @@
 const _ = require('lodash');
 const express = require('express');
 const events = require('events');
-const formidable = require('formidable');
+const bodyParser = require('body-parser');
 const Crypto = require('ezcrypto').Crypto;
 
 // internal dependencies
@@ -23,6 +23,7 @@ var GitHubWebhooks = {
 
   listen: function(port) {
     this.close();
+    this._server.use(bodyParser.raw());
     this._serverInstance = this._server.listen(port);
   },
 
@@ -35,34 +36,30 @@ var GitHubWebhooks = {
 
   _retrievePostedWebhookData: function(req, res) {
     // pull the data out of the request as its received
-    var form = new formidable.IncomingForm();
-    form.parse(req, function(err, fields) {
-      if (err) {
-        this._events.emit('error', err);
-        return;
-      }
-
-      if (!this._validate(req)) {
+    if (!this._validate(req)) {
         this._events.emit('error', 'request is invalid');
         return;
-      }
+    }
 
-      // emit a raw event so developers can listen to raw posted webhook data
-      // (in the event that they want to listen to something other than the
-      // public events)
-      this._events.emit('raw', fields);
+    var fields = JSON.parse(req.body);
 
-      // try to detect this webhook by running it through our expected github
-      // webhook mappings
-      this._processWebhook(fields);
+    // emit a raw event so developers can listen to raw posted webhook data
+    // (in the event that they want to listen to something other than the
+    // public events)
+    this._events.emit('raw', fields);
 
-      // let the HTTP request finish (GitHub will report the status of POST's to
-      // the specified endpoint in the webhook history)
-      res.status(200).end();
-    }.bind(this));
+    // try to detect this webhook by running it through our expected github
+    // webhook mappings
+    this._processWebhook(fields);
+
+    // let the HTTP request finish (GitHub will report the status of POST's to
+    // the specified endpoint in the webhook history)
+    res.status(200).end();
   },
 
   _validate: function(req) {
+      console.log(req.body);
+
       var signature = 'sha1=' + Crypto.HMAC(Crypto.SHA1, req.body, process.env.SECRET, { asString: true });
       console.log(signature, req.headers['x-hub-signature']);
       return signature === req.headers['x-hub-signature'];
