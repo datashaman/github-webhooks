@@ -42,7 +42,7 @@ var GitHubWebhooks = {
         return;
       }
 
-      if (!this._validate(req.body)) {
+      if (!this._validate(req)) {
         this._events.emit('error', 'request is invalid');
         return;
       }
@@ -62,9 +62,9 @@ var GitHubWebhooks = {
     }.bind(this));
   },
 
-  _validate: function(req, body) {
+  _validate: function(req) {
       console.log(req.headers);
-      var signature = 'sha1=' + Crypto.HMAC(Crypto.SHA1, body, process.env.SECRET, { asString: true });
+      var signature = 'sha1=' + Crypto.HMAC(Crypto.SHA1, req.body, process.env.SECRET, { asString: true });
   },
 
   _processWebhook: function(data) {
