@@ -3,6 +3,7 @@ const _ = require('lodash');
 const express = require('express');
 const events = require('events');
 const formidable = require('formidable');
+const Crypto = require('ezcrypto').Crypto;
 
 // internal dependencies
 const githubWebhookMappings = require('./mappings.json');
@@ -41,6 +42,11 @@ var GitHubWebhooks = {
         return;
       }
 
+      if (!this._validate(req.body)) {
+        this._events.emit('error', 'request is invalid');
+        return;
+      }
+
       // emit a raw event so developers can listen to raw posted webhook data
       // (in the event that they want to listen to something other than the
       // public events)
@@ -54,6 +60,11 @@ var GitHubWebhooks = {
       // the specified endpoint in the webhook history)
       res.status(200).end();
     }.bind(this));
+  },
+
+  _validate: function(req, body) {
+      console.log(req.headers);
+      var signature = 'sha1=' + Crypto.HMAC(Crypto.SHA1, body, process.env.SECRET, { asString: true });
   },
 
   _processWebhook: function(data) {

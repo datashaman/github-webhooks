@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "express": "^4.12.3",
+    "ezcrypto": "0.0.3",
     "formidable": "^1.0.17",
     "lodash": "^3.6.0"
   }
